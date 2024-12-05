@@ -2,8 +2,8 @@ extends TileMap
 
 var grid
 enum Layers{hidden,revealed}
-var source = 0
-const hidden_tile = Vector2(18,0)
+var source = 1
+const hidden_tile = Vector2(12,0)
 const hidden_tile_alt = 1
 var reavealed = []
 var tile_to_atlas = {}
@@ -48,7 +48,7 @@ func players():
 
 func getTiles():
 	var chosen_tile = []
-	var options = range(18)
+	var options = range(12)
 	options.shuffle()
 	for i in range(grid * int(grid/2)):
 		var current = Vector2(options.pop_back(),0)
@@ -75,7 +75,6 @@ func _input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
 			var global_clicked = event.position
 			var pos_clicked = Vector2(local_to_map(to_local(global_clicked)))
-			print(pos_clicked)
 			var current_tile_alt = get_cell_alternative_tile(Layers.hidden, pos_clicked)
 			if current_tile_alt == 1 and reavealed.size() < 2:
 				self.set_cell(Layers.hidden, pos_clicked, -1)
@@ -102,8 +101,8 @@ func putBack():
 	reavealed.clear()
 
 func updateText():
-	$"../CanvasLayer/score_lb".text = " %d" % score1
-	$"../CanvasLayer/score_lb2".text = " %d" % score2
+	$"../CanvasLayer/score_lb".text = " %d points" % score1
+	$"../CanvasLayer/score_lb2".text = " %d points" % score2
 	if(turns%2==0):
 		$"../CanvasLayer/status".text = str(p2)+"'s turn"
 	else:

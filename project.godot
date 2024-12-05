@@ -12,9 +12,16 @@ config_version=5
 
 config/name="Form3"
 run/main_scene="res://scen.tscn"
+run/disable_stdout=true
+run/disable_stderr=true
+run/print_header=false
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0.82606, 0.82606, 0.82606, 1)
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 config/icon="res://rad.png"
+config/windows_native_icon="res://rad.ico"
 
 [display]
 

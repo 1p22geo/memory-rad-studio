@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Project1"
+config/name="Form3"
 run/main_scene="res://scen.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0.82606, 0.82606, 0.82606, 1)
